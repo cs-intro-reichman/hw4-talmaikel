@@ -35,22 +35,19 @@ public class MyString {
     public static boolean contains(String str1, String str2) {
         if (str2.length() > str1.length()) return false; 
         if (str2.isEmpty()) return true; 
-    
-        String nStr1 = lowerCase(str1); 
-        String nStr2 = lowerCase(str2);
-    
+        
         int j = 0; 
         int count = 0; 
-    
-        for (int i = 0; i < nStr1.length(); i++) {
-            if (nStr1.charAt(i) == nStr2.charAt(j)) {
+        
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) == str2.charAt(j)) {
                 count++;
                 j++;
             } else {
                 count = 0;
                 j = 0; 
             }
-            if (count == nStr2.length()) {
+            if (count == str2.length()) {
                 return true; 
             }
         }
