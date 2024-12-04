@@ -36,18 +36,22 @@ public class MyString {
         if (str2.length() > str1.length()) return false; 
         if (str2.isEmpty()) return true; 
         
+       String s1= lowerCase(str1);
+       String s2= lowerCase(str2);
+       
+       
         int j = 0; 
         int count = 0; 
         
-        for (int i = 0; i < str1.length(); i++) {
-            if (str1.charAt(i) == str2.charAt(j)) {
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(i) == s2.charAt(j)) {
                 count++;
                 j++;
             } else {
                 count = 0;
                 j = 0; 
             }
-            if (count == str2.length()) {
+            if (count == s2.length()) {
                 return true; 
             }
         }
