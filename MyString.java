@@ -54,7 +54,6 @@ public class MyString {
                 return true; 
             }
         }
-    
         return false; 
     }
 }
