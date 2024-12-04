@@ -3,7 +3,7 @@ public class MyString {
         System.out.println("Testing lowercase:");
         System.out.println("UnHappy : " + lowerCase("UnHappy"));
         System.out.println("This costs 15 Sheksls : " + lowerCase("This costs 15 Sheksls"));
-        System.out.println("TLV : " + lowerCase("TLV"));
+        System.out.println("TLV : " + lowerCase("Yaga"));
         System.out.println("lowercase : " + lowerCase("lowercase"));
 
         System.out.println("Testing contains:");
@@ -36,22 +36,19 @@ public class MyString {
         if (str2.length() > str1.length()) return false; 
         if (str2.isEmpty()) return true; 
         
-       String s1= lowerCase(str1);
-       String s2= lowerCase(str2);
-       
-       
-        int j = 0; 
-        int count = 0; 
+        String s1 = lowerCase(str1);
+        String s2 = lowerCase(str2);
         
-        for (int i = 0; i < s1.length(); i++) {
-            if (s1.charAt(i) == s2.charAt(j)) {
-                count++;
-                j++;
-            } else {
-                count = 0;
-                j = 0; 
+        for (int i = 0; i <= s1.length() - s2.length(); i++) {
+            boolean match = true;
+            for (int j = 0; j < s2.length(); j++) {
+                if (s2.charAt(j) != s1.charAt(i + j)) {
+                    match = false;
+                    break;
+                }
             }
-            if (count == s2.length()) {
+            
+            if (match == true) {
                 return true; 
             }
         }
